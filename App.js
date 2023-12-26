@@ -1,27 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image} from 'react-native';
+import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image ,   Button
+} from 'react-native';
 export default function App() {
-  const {text, onChangetext} = useState('useless text')
+  const [textb, onChangetext] = useState('useless text')
   console.log("hi i begin")
+  const [count, setCount] = useState(0);
+
+  function onPressLearnMore()  {
+    setCount(count+1)
+    alert(textb+'  '+count)
+  }
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={5} style={styles.text}  onPress={alert('yes im here')}>ali Tamrawe is  here now </Text>
+      <Text numberOfLines={5} style={styles.text}  onPress={console.log('hi')}>ali Tamrawe is  here now </Text>
       {/* <Image  source={require('./assets/ali.jpg')}/> */}
       <Image
-      blurRadius={2}
+      blurRadius={0}
       source={ 
         
         {
           width:300,
           height:200,
-          uri:'https://picsum.photos/201'}}/>
+          uri:'https://picsum.photos/203'}}/>
+
+<Button
+  onPress={onPressLearnMore}
+  title="Learn More"
+  color="#661985"
+  accessibilityLabel="Learn more about this purple button"
+/>
       <Text>next text </Text>
       <TextInput 
        style={styles.input}
        onChangeText={onChangetext}
-       value={text}
+       value={textb}
        /> 
+       <Button
+  onPress={() =>{setCount(0)}}
+  title="Clear"
+  color="#991985"
+/>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -30,14 +49,17 @@ export default function App() {
 
 const styles = StyleSheet.create({
   input: {
-    width:200,
-    height: 80,
+    width:300,
+    height: 100,
     margin: 12,
-    borderWidth: 1,
+    borderWidth: 3,
     padding: 10,
-    borderTopLeftRadius:10
+    borderRadius:10,
+    borderColor:'#845966',
+    backgroundColor:'#ffe'
   },
   container: {
+    
     flex: 1,
     backgroundColor: '#088',
     alignItems: 'center',
