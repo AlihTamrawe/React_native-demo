@@ -1,29 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image ,   Button
+import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button
 } from 'react-native';
 export default function App() {
   const [textb, onChangetext] = useState('useless text')
+  const [password, onChangepassword] = useState('password')
+
   console.log("hi i begin")
   const [count, setCount] = useState(0);
 
   function onPressLearnMore()  {
     setCount(count+1)
     alert(textb+'  '+count)
+    
+  }
+  function onclear()  {
+    setCount(0)
+
+    alert( '  cleared')
+    onChangetext('')
+    onChangepassword('')
+    
   }
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={5} style={styles.text}  onPress={console.log('hi')}>ali Tamrawe is  here now </Text>
+      <Text draga numberOfLines={5} style={styles.text} >ali Tamrawe is  here now </Text>
       {/* <Image  source={require('./assets/ali.jpg')}/> */}
+      <TouchableWithoutFeedback onPress={()=>{console.log(password)}} >
       <Image
-      blurRadius={0}
+      blurRadius={2}
+      fadeDuration={2020}
       source={ 
         
         {
           width:300,
           height:200,
-          uri:'https://picsum.photos/203'}}/>
+          uri:'https://picsum.photos/207'}}/>
 
+      </TouchableWithoutFeedback>
+      
 <Button
   onPress={onPressLearnMore}
   title="Learn More"
@@ -37,10 +52,18 @@ export default function App() {
        value={textb}
        /> 
        <Button
-  onPress={() =>{setCount(0)}}
+  onPress={onclear}
   title="Clear"
   color="#991985"
 />
+<TextInput 
+      style={styles.inputPassword}
+      onChangeText={onChangepassword}
+      password={true} 
+      secureTextEntry={true}
+      value={password}
+
+       /> 
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -48,10 +71,22 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
+  inputPassword:{
+    width:300,
+    height: 30,
+    margin: 5,
+    borderWidth: 3,
+    padding: 10,
+    borderRadius:10,
+    borderColor:'white',
+    backgroundColor:'#ffe',
+    textContentType:'newPassword',
+    
+  },
   input: {
     width:300,
-    height: 100,
-    margin: 12,
+    height: 30,
+    margin: 5,
     borderWidth: 3,
     padding: 10,
     borderRadius:10,
