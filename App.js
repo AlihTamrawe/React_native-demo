@@ -2,6 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button
 } from 'react-native';
+
+import * as Progress from 'react-native-progress';
+ 
+
 export default function App() {
   const [textb, onChangetext] = useState('useless text')
   const [password, onChangepassword] = useState('password')
@@ -26,10 +30,15 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text draga numberOfLines={5} style={styles.text} >ali Tamrawe is  here now </Text>
       {/* <Image  source={require('./assets/ali.jpg')}/> */}
+      {/* <ProgressBar  progress={50}  margin={20} width={200} color={'red'} size={100} indeterminate={true} indeterminateAnimationDuration={2500}  /> */}
+      <Progress.Circle  size={30} progress={0.9} color='white' indeterminate={true} indeterminateAnimationDuration={2000}  />
+      <Progress.Pie progress={0.36} size={50}  indeterminate={true} indeterminateAnimationDuration={2000} />
+
       <TouchableWithoutFeedback onPress={()=>{console.log(password)}} >
+
       <Image
       blurRadius={2}
-      fadeDuration={2020}
+      fadeDuration={2020}r
       source={ 
         
         {
@@ -89,8 +98,7 @@ const styles = StyleSheet.create({
     borderRadius:10,
     borderColor:'white',
     backgroundColor:'#ffe',
-    textContentType:'newPassword',
-    
+     
   },
   input: {
     width:300,
@@ -105,7 +113,7 @@ const styles = StyleSheet.create({
   container: {
     
     flex: 1,
-    backgroundColor: '#fa0',
+    backgroundColor: 'rgba(52, 52, 8, 0.8)',
     alignItems: 'center',
     left:2,
     justifyContent: 'center',
