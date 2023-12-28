@@ -11,7 +11,7 @@ export default function App() {
 
   function onPressLearnMore()  {
     setCount(count+1)
-    alert(textb+'  '+count)
+    alert(textb+'  '+count+' u pass  '+password )
     
   }
   function onclear()  {
@@ -56,6 +56,15 @@ export default function App() {
   title="Clear"
   color="#991985"
 />
+<Image
+      blurRadius={2}
+      fadeDuration={2020}
+      source={ 
+        
+        {
+          width:300,
+          height:200,
+          uri:'https://picsum.photos/305'}}/>
 <TextInput 
       style={styles.inputPassword}
       onChangeText={onChangepassword}
@@ -96,7 +105,7 @@ const styles = StyleSheet.create({
   container: {
     
     flex: 1,
-    backgroundColor: '#088',
+    backgroundColor: '#fa0',
     alignItems: 'center',
     left:2,
     justifyContent: 'center',
