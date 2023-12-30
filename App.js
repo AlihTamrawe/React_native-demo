@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button
+import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button,FlatList, Platform
 } from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -15,7 +15,9 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   const [textb, onChangetext] = useState('useless text')
   const [password, onChangepassword] = useState('password')
-
+  console.log(Platform)
+if (Platform.Version === 25) {
+  console.log('Running on Nougat!');}
   console.log("hi i begin")
   const [count, setCount] = useState(0);
 
@@ -107,13 +109,29 @@ style={[
     flexDirection: 'column',
   },
 ]}>
-  <View style={{flex: 2,   justifyContent:'center',   backgroundColor: 'rgba(69, 26, 50, 0.9)'}}>
+    <View style={{flex: 2,   justifyContent:'center',   backgroundColor: 'rgba(69, 26, 50, 0.9)'}}>
       <Progress.Circle  size={100} progress={0.9} color='white' indeterminate={true} indeterminateAnimationDuration={2000}/>
-
+      
   
-  </View> 
-<View style={{flex: 2,     backgroundColor: 'rgba(20, 26, 70, 0.2)'}} ></View> 
-<View style={{flex: 2,      width: '80%',    backgroundColor: 'rgba(63, 80, 10, 0.3)',}} ></View> 
+    </View> 
+    <View style={{flex: 2,     backgroundColor: 'rgba(20, 26, 70, 0.2)'}} >
+
+    </View> 
+      <View style={{flex: 2,      width: '80%',    backgroundColor: 'rgba(63, 80, 10, 0.3)',}} >
+      {/* <Progress.CircleSnail size={50} endAngle={0.9} progress={1} color='red' showsText={true}></Progress.CircleSnail> */}
+      <FlatList data={[
+         {key: 'Devin'},
+         {key: 'Dan'},
+         {key: 'Dominic'},
+         {key: 'Jackson'},
+         {key: 'James'},
+         {key: 'Joel'},
+         {key: 'John'},
+         {key: 'Jillian'},
+         {key: 'Jimmy'},
+         {key: 'Julie'},
+      ]}   renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}/>
+      </View> 
 </View>
 
 </NavigationContainer>
@@ -158,5 +176,9 @@ const styles = StyleSheet.create({
     color:'red',
     textTransform: 'uppercase'
 
-  }
+  }, item: {
+    padding: 6,
+    fontSize: 11,
+    height: 20,
+  },
 });

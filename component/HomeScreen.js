@@ -1,17 +1,26 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button
+import { useState , useEffect } from 'react';
+import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button,Platform
 } from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {NavigationContainer} from '@react-navigation/native';
+import axios from 'axios';
 
 export default function HomeScreen() {
-  
+  console.log(Platform)
+  const [android,setandroid] = useState([])
+  useEffect(()=>{
+    axios.get('https://en.wikipedia.org/wiki/Android_version_history#:~:text=updates.%5B15%5D-,Name,-Internal%20codename%5B11').then((res)=>{
+      if(res.data){
+       }
+    }).catch((err)=>{console.log(err)})
+
+  }) 
   return (
     <View>
-          <Text  numberOfLines={5} style={styles.text} >ali Tamrawe is  here now </Text>
+          <Text  numberOfLines={1} style={styles.text} >my device name is {(Platform.OS!="web")? Platform.constants.Model:Platform.OS} ali Tamrawe is  here now </Text>
     </View>
   )
 
