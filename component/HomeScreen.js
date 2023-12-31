@@ -9,7 +9,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import axios from 'axios';
 
 export default function HomeScreen() {
-  console.log(Platform)
+  
+  // console.log(Platform)
   const [android,setandroid] = useState([])
   useEffect(()=>{
     axios.get('https://en.wikipedia.org/wiki/Android_version_history#:~:text=updates.%5B15%5D-,Name,-Internal%20codename%5B11').then((res)=>{

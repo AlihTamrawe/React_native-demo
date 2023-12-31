@@ -19,7 +19,7 @@ const fetchData = async () => {
 const printData = async () => {
   try {
     const data = await fetchData()
-    console.log('Data', data['results'])
+    // console.log('Data', data['results'])
   } catch (error) {
     console.error('Problem', error)
   }
@@ -28,7 +28,7 @@ printData()
 export default function App() {
   const [textb, onChangetext] = useState('useless text')
   const [password, onChangepassword] = useState('password')
-  console.log(Platform)
+  // console.log(Platform)
 if (Platform.Version === 25) {
   console.log('Running on Nougat!');}
   console.log("hi i begin")
@@ -128,10 +128,10 @@ style={[
     flexDirection: 'column',
   },
 ]}>
-    <View style={{flex: 2,   justifyContent:'center', alignItems:'center' , backgroundColor: 'rgba(69, 26, 50, 0.9)'}}>
+    <View          onPress={()=>{console.log("presser")}} style={{flex: 3,   justifyContent:'center', alignItems:'center' ,margin:20, backgroundColor: 'lightgreen'}}>
       <Progress.Circle  size={100} progress={0.9} color='white' indeterminate={true} indeterminateAnimationDuration={2000}/>
       
-      <Text >        {count}
+      <Text style={{ flex:2, fontSize:44 ,padding:5 ,color:'red', right:25}} >        {count}
 </Text>
     </View> 
     <View style={{flex: 2,     backgroundColor: 'rgba(20, 26, 70, 0.2)'}} >
