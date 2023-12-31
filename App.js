@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button,FlatList, Platform
+import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button,FlatList, Platform,TouchableOpacity
 } from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -11,7 +11,20 @@ import * as Progress from 'react-native-progress';
 import HomeScreen from './component/HomeScreen.js';
 
 const Stack = createNativeStackNavigator();
-
+const fetchData = async () => {
+  const response = await fetch('https://randomuser.me/api/')
+  const data = await response.json()
+  return data
+}
+const printData = async () => {
+  try {
+    const data = await fetchData()
+    console.log('Data', data['results'])
+  } catch (error) {
+    console.error('Problem', error)
+  }
+}
+printData()
 export default function App() {
   const [textb, onChangetext] = useState('useless text')
   const [password, onChangepassword] = useState('password')
@@ -98,6 +111,13 @@ if (Platform.Version === 25) {
 //       </NavigationContainer>
 //     </SafeAreaView>
 <NavigationContainer>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.7}
+        onPress={() => {
+          setCount(count + 1)
+        }}
+      />
       <HomeScreen >
 
       </HomeScreen>
@@ -140,6 +160,13 @@ style={[
 
 
 const styles = StyleSheet.create({
+  button: {
+    padding: 40,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: 'green',
+    backgroundColor: 'lightgreen',
+  },
   inputPassword:{
     width:300,
     height: 30,
