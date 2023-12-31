@@ -119,7 +119,6 @@ if (Platform.Version === 25) {
         }}
       />
       <HomeScreen >
-
       </HomeScreen>
       <View
 style={[
@@ -129,10 +128,11 @@ style={[
     flexDirection: 'column',
   },
 ]}>
-    <View style={{flex: 2,   justifyContent:'center',   backgroundColor: 'rgba(69, 26, 50, 0.9)'}}>
+    <View style={{flex: 2,   justifyContent:'center', alignItems:'center' , backgroundColor: 'rgba(69, 26, 50, 0.9)'}}>
       <Progress.Circle  size={100} progress={0.9} color='white' indeterminate={true} indeterminateAnimationDuration={2000}/>
       
-  
+      <Text >        {count}
+</Text>
     </View> 
     <View style={{flex: 2,     backgroundColor: 'rgba(20, 26, 70, 0.2)'}} >
 
