@@ -9,7 +9,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import * as Progress from 'react-native-progress';
 import HomeScreen from './component/HomeScreen.js';
-
+import Pages from './component/Pages.js';
 const Stack = createNativeStackNavigator();
 const fetchData = async () => {
   const response = await fetch('https://randomuser.me/api/')
@@ -153,7 +153,7 @@ style={[
       ]}   renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}/>
       </View> 
 </View>
-
+        <Pages></Pages>
 </NavigationContainer>
   );
 }
