@@ -48,68 +48,7 @@ if (Platform.Version === 25) {
     
   }
   return (
-//     <SafeAreaView style={styles.container}>
-//       <Text draga numberOfLines={5} style={styles.text} >ali Tamrawe is  here now </Text>
-//       {/* <Image  source={require('./assets/ali.jpg')}/> */}
-//       {/* <ProgressBar  progress={50}  margin={20} width={200} color={'red'} size={100} indeterminate={true} indeterminateAnimationDuration={2500}  /> */}
-//       <Progress.Circle  size={200} progress={0.9} color='white' indeterminate={true} indeterminateAnimationDuration={2000}>
-//       <Progress.Pie progress={0.36} size={50}  indeterminate={true} indeterminateAnimationDuration={2000} />
-//         </Progress.Circle>  
-      
 
-//       <TouchableWithoutFeedback onPress={()=>{console.log(password)}} >
-
-//       <Image
-//       blurRadius={2}
-//       fadeDuration={2020}r
-//       source={ 
-        
-//         {
-//           width:100,
-//           height:100,
-//           uri:'https://picsum.photos/207'}}/>
-
-//       </TouchableWithoutFeedback>
-      
-// <Button
-//   onPress={onPressLearnMore}
-//   title="Learn More"
-//   color="#661985"
-//   accessibilityLabel="Learn more about this purple button"
-// />
-//       <Text>next text </Text>
-//       <TextInput 
-//        style={styles.input}
-//        onChangeText={onChangetext}
-//        value={textb}
-//        /> 
-//        <Button
-//   onPress={onclear}
-//   title="Clear"
-//   color="#991985"
-// />
-// <Image
-//       blurRadius={2}
-//       fadeDuration={2020}
-//       source={ 
-        
-//         {
-//           width:70,
-//           height:70,
-//           uri:'https://picsum.photos/305'}}/>
-// <TextInput 
-//       style={styles.inputPassword}
-//       onChangeText={onChangepassword}
-//       password={true} 
-//       secureTextEntry={true}
-//       value={password}
-
-//        /> 
-//       <StatusBar style="auto" />
-//       <NavigationContainer>
-//         <Text value={'hallo'}/>
-//       </NavigationContainer>
-//     </SafeAreaView>
 <NavigationContainer>
       <TouchableOpacity
         style={styles.button}
@@ -128,6 +67,7 @@ style={[
     flexDirection: 'column',
   },
 ]}>
+  </View>
     <View          onPress={()=>{console.log("presser")}} style={{flex: 3,   justifyContent:'center', alignItems:'center' ,margin:20, backgroundColor: 'lightgreen'}}>
       <Progress.Circle  size={100} progress={0.9} color='white' indeterminate={true} indeterminateAnimationDuration={2000}/>
       
@@ -136,22 +76,7 @@ style={[
     </View> 
     <View style={{flex: 2,     backgroundColor: 'rgba(20, 26, 70, 0.2)'}} >
 
-    </View> 
-      <View style={{flex: 2,      width: '80%',    backgroundColor: 'rgba(63, 80, 10, 0.3)',}} >
-      {/* <Progress.CircleSnail size={50} endAngle={0.9} progress={1} color='red' showsText={true}></Progress.CircleSnail> */}
-      <FlatList data={[
-         {key: 'Devin'},
-         {key: 'Dan'},
-         {key: 'Dominic'},
-         {key: 'Jackson'},
-         {key: 'James'},
-         {key: 'Joel'},
-         {key: 'John'},
-         {key: 'Jillian'},
-         {key: 'Jimmy'},
-         {key: 'Julie'},
-      ]}   renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}/>
-      </View> 
+   
 </View>
         <Pages></Pages>
 </NavigationContainer>

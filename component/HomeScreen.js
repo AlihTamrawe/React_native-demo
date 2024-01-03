@@ -21,6 +21,21 @@ export default function HomeScreen() {
   }) 
   return (
     <View>
+      <View style={{flex: 2,      width: '80%',    backgroundColor: 'rgba(63, 80, 10, 0.3)',}} >
+      {/* <Progress.CircleSnail size={50} endAngle={0.9} progress={1} color='red' showsText={true}></Progress.CircleSnail> */}
+      <FlatList data={[
+         {key: 'Devin'},
+         {key: 'Dan'},
+         {key: 'Dominic'},
+         {key: 'Jackson'},
+         {key: 'James'},
+         {key: 'Joel'},
+         {key: 'John'},
+         {key: 'Jillian'},
+         {key: 'Jimmy'},
+         {key: 'Julie'},
+      ]}   renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}/>
+      </View> 
           <Text  numberOfLines={1} style={styles.text} >my device name is {(Platform.OS!="web")? Platform.constants.Model:Platform.OS} ali Tamrawe is  here now </Text>
     </View>
   )
