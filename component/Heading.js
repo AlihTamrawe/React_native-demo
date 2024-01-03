@@ -1,3 +1,12 @@
+import React from 'react'
+import { StatusBar } from 'expo-status-bar';
+import { useState , useEffect } from 'react';
+import { StyleSheet, Text, View ,TextInput , SafeAreaView,Image , TouchableWithoutFeedback,  Button,Platform, FlatList
+} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+import {NavigationContainer} from '@react-navigation/native';
+
 export default function Heading({ level, children }) {
     switch (level) {
       case 1:
